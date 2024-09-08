@@ -1,10 +1,10 @@
 name: Sync packages
 
 on:
-  push:
-    paths:
-      - '.github/workflows/sync.yml'
-      - '.github/diy/main.sh'
+#  push:
+#    paths:
+#      - '.github/workflows/sync.yml'
+#      - '.github/diy/main.sh'
 #  schedule:
 #    - cron: 0 */4 * * *
   repository_dispatch:
@@ -55,6 +55,9 @@ jobs:
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       run: |
+        if [ -e $GITHUB_WORKSPACE/tinyportmapper ]; then
+          cp -r $GITHUB_WORKSPACE/tinyportmapper $GITHUB_WORKSPACE/${{matrix.target}}
+        fi
         if [ -e $GITHUB_WORKSPACE/luci-app-tinyportmapper ]; then
           cp -r $GITHUB_WORKSPACE/luci-app-tinyportmapper $GITHUB_WORKSPACE/${{matrix.target}}
         fi
