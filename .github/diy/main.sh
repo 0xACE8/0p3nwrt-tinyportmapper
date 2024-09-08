@@ -23,7 +23,7 @@ function merge_package() {
     done
     cd "$rootdir"
 }
-merge_package master https://github.com/kiddin9/openwrt-packages . tinyportmapper
+#merge_package master https://github.com/kiddin9/openwrt-packages . tinyportmapper
 #git clone --depth 1 --filter=blob:none https://github.com/nlroel/luci-app-tinyportmapper luci-app-tinyportmapper
 
 
