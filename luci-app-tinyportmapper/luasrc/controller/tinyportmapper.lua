@@ -13,7 +13,7 @@ function index()
 
    entry({"admin", "services", "tinyportmapper"},
       firstchild(),
-      _("tinyPortMapper"), -1).dependent = false
+      _("tinyPortMapper"), 87).dependent = false
 
    entry({"admin", "services", "tinyportmapper", "settings"},
       cbi("tinyportmapper/settings"), _("Settings"), 1)
